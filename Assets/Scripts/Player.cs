@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isDead == false){
-			if (Input.GetKey("up")){
+			if (Input.GetKeyDown("up")){
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(0, upForce));
 				anim.SetTrigger("Jump");
