@@ -10,7 +10,8 @@ public class Player : MonoBehaviour {
 	
 	private bool isDead = false;
 	private Rigidbody2D rb2d;
-
+	private Animator anim;
+	
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent <Rigidbody2D> ();
