@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float upForce = 50f;
-	public float leftForce = -50f;
-	public float rightForce = 50f;
+	public float upForce = 100f;
+	public float leftForce = -30f;
+	public float rightForce = 30f;
 	
 	private bool isDead = false;
 	private Rigidbody2D rb2d;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 		if (isDead == false){
 			if (Input.GetKeyDown("up")){
 				rb2d.velocity = Vector2.zero;
