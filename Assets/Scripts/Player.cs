@@ -18,6 +18,11 @@ public class Player : MonoBehaviour {
 		anim = GetComponent <Animator> ();
 	}
 	
+
+	void OnCollisionEnter2D(Collision2D collision){
+		print(collision.gameObject.name);
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
