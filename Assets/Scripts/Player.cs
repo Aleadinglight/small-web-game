@@ -21,6 +21,12 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		string nextDoorName = "";
+
+		if (collision.gameObject.name=="DeadWall"){
+			isDead = true;
+			print("dead");
+		}
+
 		if(collision.gameObject.name=="BotLeftDoor"){
 			nextDoorName = "TopRightDoor";
 		}
