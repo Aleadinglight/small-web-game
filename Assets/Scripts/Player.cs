@@ -20,7 +20,18 @@ public class Player : MonoBehaviour {
 	
 
 	void OnCollisionEnter2D(Collision2D collision){
-		print(collision.gameObject.name);
+		string nextDoorName = "";
+		if(collision.gameObject.name=="BotLeftDoor"){
+			nextDoorName = "TopRightDoor";
+		}
+
+		if(collision.gameObject.name=="BotRightDoor"){
+			nextDoorName = "TopLeftDoor";
+		}
+		if (nextDoorName!=""){
+			Vector3 newPosition = GameObject.Find(nextDoorName).transform.position;
+			this.rb2d.position = new Vector2(newPosition.x, newPosition.y);
+		}
 	}
 
 	// Update is called once per frame
