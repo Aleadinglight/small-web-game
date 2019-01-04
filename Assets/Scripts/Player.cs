@@ -48,26 +48,25 @@ public class Player : MonoBehaviour {
 			if (Input.GetKeyDown("up")){
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(0, upForce));
-				anim.SetTrigger("Jump");
 			}
 			if (Input.GetKeyDown("left")){
-				rb2d.velocity = Vector2.zero;
-				rb2d.AddForce(new Vector2(leftForce, 0));
 				anim.SetTrigger("Run");
+				rb2d.velocity = Vector2.zero;
+				rb2d.AddRelativeForce(new Vector2(leftForce, 0));
+				
 				if(facingRight){
 					Flip();
 					facingRight = !facingRight;
 				}
 			}
 			if (Input.GetKeyDown("right")){
+				anim.SetTrigger("Run");
 				rb2d.velocity = Vector2.zero;
-				rb2d.AddForce(new Vector2(rightForce, 0));
+				rb2d.AddRelativeForce(new Vector2(rightForce, 0));
 				if (!facingRight){
 					Flip();
 					facingRight = !facingRight;
 				}
-				anim.SetTrigger("Run");
-
 			}
 		}
 	}
