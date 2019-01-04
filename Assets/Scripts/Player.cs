@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public float rightForce = 50f;
 	
 	private bool isDead = false;
+	private bool facingRight = true;
 	private Rigidbody2D rb2d;
 	private Animator anim;
 
@@ -53,12 +54,25 @@ public class Player : MonoBehaviour {
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(leftForce, 0));
 				anim.SetTrigger("Run");
+				if(facingRight){
+					Flip();
+					facingRight = !facingRight;
+				}
 			}
 			if (Input.GetKeyDown("right")){
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(rightForce, 0));
+				if (!facingRight){
+					Flip();
+					facingRight = !facingRight;
+				}
 				anim.SetTrigger("Run");
+
 			}
 		}
+	}
+
+	void Flip(){
+		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
 	}
 }
