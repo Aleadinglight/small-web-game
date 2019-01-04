@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public float upForce = 100f;
-	public float leftForce = -30f;
-	public float rightForce = 30f;
+	public float leftForce = -50f;
+	public float rightForce = 50f;
 	
 	private bool isDead = false;
 	private Rigidbody2D rb2d;
@@ -27,13 +27,15 @@ public class Player : MonoBehaviour {
 				rb2d.AddForce(new Vector2(0, upForce));
 				anim.SetTrigger("Jump");
 			}
-			if (Input.GetKey("left")){
+			if (Input.GetKeyDown("left")){
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(leftForce, 0));
+				anim.SetTrigger("Run");
 			}
-			if (Input.GetKey("right")){
+			if (Input.GetKeyDown("right")){
 				rb2d.velocity = Vector2.zero;
 				rb2d.AddForce(new Vector2(rightForce, 0));
+				anim.SetTrigger("Run");
 			}
 		}
 	}
