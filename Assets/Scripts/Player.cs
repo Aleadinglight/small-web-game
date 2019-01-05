@@ -74,4 +74,24 @@ public class Player : MonoBehaviour {
 	void Flip(){
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
 	}
+
+	void moveLeft(){
+		anim.SetTrigger("Run");
+		rb2d.velocity = Vector2.zero;
+		rb2d.AddRelativeForce(new Vector2(leftForce, 0));
+		if(facingRight){
+			Flip();
+			facingRight = !facingRight;
+		}
+	}
+
+	void moveRight(){
+		anim.SetTrigger("Run");
+		rb2d.velocity = Vector2.zero;
+		rb2d.AddRelativeForce(new Vector2(rightForce, 0));
+		if (!facingRight){
+			Flip();
+			facingRight = !facingRight;
+		}
+	}
 }
