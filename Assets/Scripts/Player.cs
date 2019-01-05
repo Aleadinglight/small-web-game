@@ -50,23 +50,10 @@ public class Player : MonoBehaviour {
 				rb2d.AddForce(new Vector2(0, upForce));
 			}
 			if (Input.GetKeyDown("left")){
-				anim.SetTrigger("Run");
-				rb2d.velocity = Vector2.zero;
-				rb2d.AddRelativeForce(new Vector2(leftForce, 0));
-				
-				if(facingRight){
-					Flip();
-					facingRight = !facingRight;
-				}
+				Move("Left");
 			}
 			if (Input.GetKeyDown("right")){
-				anim.SetTrigger("Run");
-				rb2d.velocity = Vector2.zero;
-				rb2d.AddRelativeForce(new Vector2(rightForce, 0));
-				if (!facingRight){
-					Flip();
-					facingRight = !facingRight;
-				}
+				Move("Right");
 			}
 		}
 	}
@@ -75,7 +62,7 @@ public class Player : MonoBehaviour {
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
 	}
 
-	void move(string direction){
+	void Move(string direction){
 		float moveForce;
 		if (direction=="Left"){
 			moveForce = leftForce;
