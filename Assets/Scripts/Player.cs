@@ -75,23 +75,26 @@ public class Player : MonoBehaviour {
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
 	}
 
-	void moveLeft(){
+	void move(string direction){
+		float moveForce;
+		if (direction=="Left"){
+			moveForce = leftForce;
+			if(facingRight){
+				Flip();
+				facingRight = !facingRight;
+			}
+		}
+		else
+		{
+			moveForce = rightForce;
+			if(!facingRight){
+				Flip();
+				facingRight = !facingRight;
+			}
+		}
 		anim.SetTrigger("Run");
 		rb2d.velocity = Vector2.zero;
-		rb2d.AddRelativeForce(new Vector2(leftForce, 0));
-		if(facingRight){
-			Flip();
-			facingRight = !facingRight;
-		}
-	}
-
-	void moveRight(){
-		anim.SetTrigger("Run");
-		rb2d.velocity = Vector2.zero;
-		rb2d.AddRelativeForce(new Vector2(rightForce, 0));
-		if (!facingRight){
-			Flip();
-			facingRight = !facingRight;
-		}
+		rb2d.AddRelativeForce(new Vector2(moveForce, 0));
+		
 	}
 }
