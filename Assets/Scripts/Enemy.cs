@@ -17,10 +17,9 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void TakeDamage(){
-		health -= 50;
-		if (health<=0){
+		health-=30;
+		if (health<0)
 			Die();
-		}
 	}
 
 	void Die(){
