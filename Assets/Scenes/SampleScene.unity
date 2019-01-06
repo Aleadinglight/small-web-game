@@ -3106,6 +3106,7 @@ GameObject:
   - component: {fileID: 675215858}
   - component: {fileID: 675215859}
   - component: {fileID: 675215860}
+  - component: {fileID: 675215861}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -3188,7 +3189,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.26, y: -0.173, z: 0}
   m_LocalScale: {x: 0.58449113, y: 0.58449113, z: 0.58449113}
-  m_Children: []
+  m_Children:
+  - {fileID: 2101580547}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3263,6 +3265,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &675215861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675215854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4494a87eb3ed9b542bd6c8eb595c3bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 2101580547}
+  bulletPrefab: {fileID: 1335345127325462, guid: a4ee9acde9a70474eb7b3136f2383b39,
+    type: 2}
 --- !u!1 &706476901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6600,6 +6616,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1564096077
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.0393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.309
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643000574799976, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+      propertyPath: m_RootOrder
+      value: 110
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4ee9acde9a70474eb7b3136f2383b39, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1575845930
 GameObject:
   m_ObjectHideFlags: 0
@@ -8852,6 +8910,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2101580546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101580547}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101580547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101580546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.215, y: 0.023, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 675215857}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144997600
 GameObject:
