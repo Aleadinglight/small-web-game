@@ -56,10 +56,13 @@ public class Player : MonoBehaviour {
 				Move("Right");
 			}
 		}
+
+		
 	}
 
 	void Flip(){
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+		facingRight = !facingRight;
 	}
 
 	void Move(string direction){
@@ -68,7 +71,6 @@ public class Player : MonoBehaviour {
 			moveForce = leftForce;
 			if(facingRight){
 				Flip();
-				facingRight = !facingRight;
 			}
 		}
 		else
@@ -76,7 +78,6 @@ public class Player : MonoBehaviour {
 			moveForce = rightForce;
 			if(!facingRight){
 				Flip();
-				facingRight = !facingRight;
 			}
 		}
 		anim.SetTrigger("Run");
